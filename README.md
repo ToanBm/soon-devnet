@@ -1,4 +1,5 @@
-# soon-devnet
+# Building on SOON Devnet
+
 ## 1. Install Rust
 ```Bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -78,10 +79,10 @@ pnpm --version
 - Result `9.11.0`
 ## 5. SOON RPC Configuration & New Key Pair
 ### - Configuring the Solana CLI to Use SOON Devnet
-- Result `
+```Bash
 solana config set --url https://rpc.devnet.soo.network/rpc
 ```
-- Result `
+```Bash
 solana config get
 ```
 You should see an output that includes the following URL:
@@ -101,52 +102,64 @@ solana-keygen new
 ```Bash
 solana-keygen recover 'prompt://?key=0/0' --outfile ~/.config/solana/id.json
 ```
-
-Get Test Tokens via SOON Faucet
-You can get test tokens via SOON Faucet.
-
-We now support Sepolia ETH and $P(erc-20 format meme token).
-
-You can also check the basic guide for Devnet:
-
-SOON Devnet Guide
+* Press ENTER to continue (no passworld)
+* Choose "y" if recovered pubkey is your address
+* Get Test Tokens via SOON Faucet
 ## 6. Deploy a Smart Contract on SOON(Hello World)
 ### - Clone the Repository
+```Bash
 git clone https://github.com/soonlabs/hello-world && cd hello-world
-
+```
 ### - Build the Project
+```Bash
 cd example-hello-world/src/program-rust
 cargo build-sbf
-
+```
 ### - Set Up the RPC URL for SOON Devnet
 ** If you have configured that and had SOL already, you can skip this step.
+```Bash
 solana config set --url https://rpc.devnet.soo.network/rpc
+```
 ### - Deploy the Program
+```Bash
 solana program deploy ./target/deploy/helloworld.so
+```
+- Result `Program Id: xxxxx`
 ## 6. Interact with the Contract(Frontend)
-cd hello-world/front-end
-pnpm i
+```Bash
+cd ../../../
+```
+```Bash
+cd front-end && pnpm i
+```
+```Bash
 pnpm dev
-
-You can now access your front-end page through the local path. The default path in the code is set to the local environment: http://localhost:3000
-Front-end display effect
-You can see a simple webpage with a button in the middle and a wallet in the upper right corner.
-Click the button to call the wallet to sign the transaction and send it to SOON Devnet RPC.
-When you successfully send a transaction, the browser will send a toast to remind you of success.
+```
+* Choose `Open Browser`
+* Connect Backpack wallet
+Picture
 And now you can check the transaction on SOON Devnet Explorer:
-
 explorer.devnet.soo.network
-
 You can see in the log that the message has been correctly transmitted.
-
+* Ctrl + C to next step
 ## 7. Interact with the Contract (Backend)
 Change into the project directory:
-cd hello-world/backend
-pnpm i
+```Bash
+cd ../
+```
+```Bash
+cd backend && pnpm i
+```
+```Bash
+pnpm add bs58
+```
+```Bash
+pnpm install --force
+```
+```Bash
 pnpm start
-
-After confirmation, you can check the transaction on SOON Devnet Explorer:
-
+```
+* After confirmation, you can check the transaction on SOON Devnet Explorer:
 explorer.devnet.soo.network
 
 
