@@ -32,19 +32,36 @@ gcc --version
 ```
 - Result `gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
 ## 3. Install Anchor CLI
+```Bash
 cargo install --git https://github.com/coral-xyz/anchor avm --force
+```
+```Bash
 avm --version
+```
+```Bash
 avm install latest
 avm use latest
+```
+```Bash
 anchor --version
-anchor-cli 0.30.1
+- Result `Now using anchor version 0.30.1.`
+
 ## 4. Install Node.js, Yarn & pnpm
+```Bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+```
+```Bash
 command -v nvm
+```
+```Bash
 nvm install node
+```
+```Bash
 node --version
-v22.9.0
+```
+- Result `v22.9.0`
 - Yarn and pnpm Installation
+
 npm install -g yarn
 yarn --version
 1.22.22
