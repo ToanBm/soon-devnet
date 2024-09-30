@@ -138,9 +138,9 @@ pnpm dev
 * Choose `Open Browser`
 * Connect Backpack wallet
 Picture
-And now you can check the transaction on SOON Devnet Explorer:
-explorer.devnet.soo.network
-You can see in the log that the message has been correctly transmitted.
+* And now you can check the transaction on SOON Devnet Explorer:
+ explorer.devnet.soo.network
+* You can see in the log that the message has been correctly transmitted.
 * Ctrl + C to next step
 ## 7. Interact with the Contract (Backend)
 Change into the project directory:
