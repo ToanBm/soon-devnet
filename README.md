@@ -44,9 +44,10 @@ avm use latest
 ```
 ```Bash
 anchor --version
+```
 - Result `Now using anchor version 0.30.1.`
-
 ## 4. Install Node.js, Yarn & pnpm
+### - Node.js Installation
 ```Bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 ```
@@ -60,33 +61,46 @@ nvm install node
 node --version
 ```
 - Result `v22.9.0`
-- Yarn and pnpm Installation
-
+### - Yarn and pnpm Installation
+```Bash
 npm install -g yarn
+```
+```Bash
 yarn --version
-1.22.22
-  
+```
+- Result `1.22.22`
+```Bash
 npm install -g pnpm
+```
+```Bash
 pnpm --version
-9.11.0
+```
+- Result `9.11.0`
 ## 5. SOON RPC Configuration & New Key Pair
-- Configuring the Solana CLI to Use SOON Devnet
+### - Configuring the Solana CLI to Use SOON Devnet
+- Result `
 solana config set --url https://rpc.devnet.soo.network/rpc
-
+```
+- Result `
 solana config get
+```
 You should see an output that includes the following URL:
-
-Copy
+```Bash
 Config File: /home/xxxx
 RPC URL: https://rpc.devnet.soo.network/rpc
 WebSocket URL: wss://rpc.devnet.soo.network/rpc (computed)
 Keypair Path: /home/xxxxx
 Commitment: confirmed
-
-- Creat new
+```
+### - Solana Wallet
+- Creat new if you don't have a SOON address
+```Bash
 solana-keygen new
+```
 - Recover old Wallet
+```Bash
 solana-keygen recover 'prompt://?key=0/0' --outfile ~/.config/solana/id.json
+```
 
 Get Test Tokens via SOON Faucet
 You can get test tokens via SOON Faucet.
