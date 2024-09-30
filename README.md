@@ -1,18 +1,36 @@
 # soon-devnet
 ## 1. Install Rust
+```Bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
+```
+```Bash
+. "$HOME/.cargo/env"
+```
+```Bash
 rustup default 1.79.0
-
+```
+```Bash
 rustc --version
+```
+- Result `rustc 1.79.0 (129f3b996 2024-06-10)`
 ## 2. Install Solana CLI
-
+```Bash
 sh -c "$(curl -sSfL https://release.anza.xyz/stable/install)"
+```
+```Bash
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+```
+```Bash
 solana --version
+```
+- Result `solana-cli 1.18.24 (src:7ba2a0e9; feat:3241752014, client:Agave)`
+```Bash
 sudo apt install gcc
+```
+```Bash
 gcc --version
-
+```
+- Result `gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
 ## 3. Install Anchor CLI
 cargo install --git https://github.com/coral-xyz/anchor avm --force
 avm --version
