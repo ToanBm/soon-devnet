@@ -137,7 +137,7 @@ pnpm dev
 ```
 * Choose `Open Browser`
 * Connect Backpack wallet
-Picture
+![Picture](https://github.com/ToanBm/soon-devnet/blob/main/soon1.jpg)
 * And now you can check the transaction on SOON Devnet Explorer:
  explorer.devnet.soo.network
 * You can see in the log that the message has been correctly transmitted.
