@@ -58,54 +58,27 @@ solana config set --url https://rpc.devnet.soo.network/rpc
 solana config get
 
 ### - Solana Wallet
-setup_wallet() {
-    KEYPAIR_DIR="$HOME/solana_keypairs"
-    mkdir -p "$KEYPAIR_DIR"
+#!/bin/bash
 
-    show "Do you want to use an existing wallet or create a new one?"
-    PS3="Please enter your choice (1 or 2): "
-    options=("Use existing wallet" "Create new wallet")
-    select opt in "${options[@]}"; do
-        case $opt in
-            "Use existing wallet")
-                show "Recovering from existing wallet..."
-                KEYPAIR_PATH="$KEYPAIR_DIR/eclipse-wallet.json"
-                solana-keygen recover -o "$KEYPAIR_PATH" --force
-                if [[ $? -ne 0 ]]; then
-                    show "Failed to recover the existing wallet. Exiting."
-                    exit 1
-                fi
-                break
-                ;;
-            "Create new wallet")
-                show "Creating a new wallet..."
-                KEYPAIR_PATH="$KEYPAIR_DIR/eclipse-wallet.json"
-                solana-keygen new -o "$KEYPAIR_PATH" --force
-                if [[ $? -ne 0 ]]; then
-                    show "Failed to create a new wallet. Exiting."
-                    exit 1
-                fi
-                break
-                ;;
-            *) show "Invalid option. Please try again." ;;
-        esac
-    done
+echo "Do you want to use an existing wallet or create a new one?"
+echo "1) Use existing wallet"
+echo "2) Create new wallet"
+read -p "Please enter your choice (1 or 2): " choice
 
-    solana config set --keypair "$KEYPAIR_PATH"
-    show "Wallet setup completed!"
+case $choice in
+    1)
+        echo "Recovering from existing wallet..."
+        solana-keygen recover 'prompt://?key=0/0' --outfile ~/.config/solana/id.json
+        ;;
+    2)
+        echo "Creating a new wallet..."
+        solana-keygen new
+        ;;
+    *)
+        echo "Tùy chọn không hợp lệ. Vui lòng chạy lại script và chọn 1 hoặc 2."
+        ;;
+esac
 
-    cp "$KEYPAIR_PATH" "$PWD"
-}
-
-
-- Creat new if you don't have a SOON address
-```Bash
-solana-keygen new
-```
-- Recover old Wallet
-```Bash
-solana-keygen recover 'prompt://?key=0/0' --outfile ~/.config/solana/id.json
-```
 * Press ENTER to continue (no passworld)
 * Choose "y" if recovered pubkey is your address
 * Get Test Tokens via SOON Faucet
