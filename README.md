@@ -1,5 +1,20 @@
 # Building on SOON Devnet
+## Automatic Guide
+### 1. Clone the repository
+```Bash
+git clone https://github.com/ToanBm/soon-devnet.git && cd soon-devnet
+```
+2. Run the setup script
+```Bash
+chmod +x build-app.sh && ./build-app.sh
+```
+In Recover old Wallet step:
+* Press ENTER to continue (no passworld)
+* Choose "y" if recovered pubkey is your address
+* Get Test Tokens via SOON Faucet
+----------------------------------------------------------------------------------------------------------
 
+## Manual Guide
 ## 1. Install Rust
 ```Bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
