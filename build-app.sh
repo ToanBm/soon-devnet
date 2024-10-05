@@ -79,65 +79,44 @@ case $choice in
         ;;
 esac
 
-* Press ENTER to continue (no passworld)
-* Choose "y" if recovered pubkey is your address
-* Get Test Tokens via SOON Faucet
 ## 6. Deploy a Smart Contract on SOON(Hello World)
+print_command "Deploy a Smart Contract on SOON (Hello World)"
 ### - Clone the Repository
-```Bash
-git clone https://github.com/soonlabs/hello-world && cd hello-world
-```
+print_command "Clone the Repository..."
+git clone https://github.com/soonlabs/hello-world
+cd hello-world
+
 ### - Build the Project
-```Bash
+print_command "Build the Project..."
 cd example-hello-world/src/program-rust
 cargo build-sbf
-```
-### - Set Up the RPC URL for SOON Devnet
-** If you have configured that and had SOL already, you can skip this step.
-```Bash
-solana config set --url https://rpc.devnet.soo.network/rpc
-```
+
 ### - Deploy the Program
-```Bash
+print_command "Deploy the Program..."
 solana program deploy ./target/deploy/helloworld.so
-```
-- Result `Program Id: xxxxx`
+
 ## 6. Interact with the Contract(Frontend)
-```Bash
+print_command "Interact with the Contract(Frontend)..."
 cd ../../../
-```
-```Bash
-cd front-end && pnpm i
-```
-```Bash
+cd front-end
+pnpm i
+
 pnpm dev
-```
-* Choose `Open Browser`
-* Connect Backpack wallet
-![Picture](https://github.com/ToanBm/soon-devnet/blob/main/soon1.jpg)
-* And now you can check the transaction on SOON Devnet Explorer:
- explorer.devnet.soo.network
-* You can see in the log that the message has been correctly transmitted.
-* Ctrl + C to next step
+
+print_command "Choose Open Browser..."
+
 ## 7. Interact with the Contract (Backend)
 Change into the project directory:
-```Bash
+print_command "Interact with the Contract (Backend)..."
 cd ../
-```
-```Bash
 cd backend && pnpm i
-```
-```Bash
+
 pnpm add bs58
-```
-```Bash
+
 pnpm install --force
-```
-```Bash
 pnpm start
-```
-* After confirmation, you can check the transaction on SOON Devnet Explorer:
-explorer.devnet.soo.network
+
+print_command "Thank you!"
 
 
 
