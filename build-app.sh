@@ -54,7 +54,7 @@ pnpm --version
 ## 5. SOON RPC Configuration & New Key Pair
 print_command "Configuring the Solana CLI to Use SOON Devnet"
 
-solana config set --url https://rpc.devnet.soo.network/rpc
+solana config set --url https://rpc.testnet.soo.network/rpc
 solana config get
 
 ### - Solana Wallet
