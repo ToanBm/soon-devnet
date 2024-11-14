@@ -16,13 +16,12 @@ print_command "Installing Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 . "$HOME/.cargo/env"
 
-rustup default 1.79.0
 rustc --version
 
 ## 2. Install Solana CLI
 print_command "Installing Solana CLI..."
 sh -c "$(curl -sSfL https://release.anza.xyz/stable/install)"
-export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="/home/codespace/.local/share/solana/install/active_release/bin:$PATH"
 solana --version
 
 sudo apt install gcc
@@ -104,37 +103,6 @@ pnpm i
 pnpm dev
 
 print_command "Choose Open Browser..."
-
-## 7. Interact with the Contract (Backend)
-Change into the project directory:
-print_command "Interact with the Contract (Backend)..."
-cd ../
-cd backend && pnpm i
-
-pnpm add bs58
-
-pnpm install --force
-pnpm start
-
-print_command "Thank you!"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
